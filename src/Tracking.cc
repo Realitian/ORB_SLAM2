@@ -1489,6 +1489,9 @@ bool Tracking::Relocalization()
         }
     }
 
+    for ( auto pSolver : vpPnPsolvers )
+        delete pSolver;
+
     if(!bMatch)
     {
         return false;
